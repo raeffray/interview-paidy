@@ -13,8 +13,13 @@ object Dependencies {
     val kindProjector       = "0.10.3"
     val logback             = "1.2.3"
     val scalaCheck          = "1.15.3"
-    val scalaTest           = "3.2.7"
+    val scalaTest           = "3.1.0"
     val catsScalaCheck      = "0.3.0"
+    val akkaVersion         = "2.7.0"
+    val akkaHttpVersion     = "10.4.0"
+    val scalaCache          = "0.28.0"
+    val guavaCacheVersion   = "10.0.1"
+    val scalaMockVersion     = "5.1.0"
   }
 
   object Libraries {
@@ -44,6 +49,14 @@ object Dependencies {
     lazy val scalaTest           = "org.scalatest"         %% "scalatest"                  % Versions.scalaTest
     lazy val scalaCheck          = "org.scalacheck"        %% "scalacheck"                 % Versions.scalaCheck
     lazy val catsScalaCheck      = "io.chrisdavenport"     %% "cats-scalacheck"            % Versions.catsScalaCheck
+
+    lazy val akkaStream          = "com.typesafe.akka"     %% "akka-stream"                % Versions.akkaVersion
+    lazy val akkaHttpSprayJson   = "com.typesafe.akka"     %% "akka-http-spray-json"       % Versions.akkaHttpVersion
+    lazy val akkaHttp            = "com.typesafe.akka"     %% "akka-http"                  % Versions.akkaHttpVersion
+    lazy val scalaCache          = "com.github.cb372"      %% "scalacache-core"            % Versions.scalaCache
+    lazy val scalaCacheCaffeine  = "com.github.cb372"      %% "scalacache-caffeine"        % Versions.scalaCache
+    lazy val scalaMock           = "org.scalamock"         %% "scalamock"                  % Versions.scalaMockVersion
+
   }
 
 }

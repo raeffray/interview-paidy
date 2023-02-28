@@ -2,7 +2,6 @@ import Dependencies._
 
 name := "forex"
 version := "1.0.1"
-
 scalaVersion := "2.13.5"
 scalacOptions ++= Seq(
   "-deprecation", // Emit warning and location for usages of deprecated APIs.
@@ -46,8 +45,10 @@ scalacOptions ++= Seq(
   "-Ycache-macro-class-loader:last-modified" // and macro definitions. This can lead to performance improvements.
 )
 
-resolvers +=
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+resolvers ++= Seq(
+  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
+  "Maven Repo" at "https://mvnrepository.com/artifact/"
+)
 
 libraryDependencies ++= Seq(
   compilerPlugin(Libraries.kindProjector),
@@ -63,7 +64,14 @@ libraryDependencies ++= Seq(
   Libraries.circeParser,
   Libraries.pureConfig,
   Libraries.logback,
-  Libraries.scalaTest        % Test,
-  Libraries.scalaCheck       % Test,
-  Libraries.catsScalaCheck   % Test
+  Libraries.akkaHttp,
+  Libraries.akkaHttpSprayJson,
+  Libraries.akkaStream,
+  Libraries.scalaCache,
+  Libraries.scalaCacheCaffeine,
+  Libraries.catsScalaCheck % Test,
+  Libraries.scalaTest % Test,
+  Libraries.scalaCheck % Test,
+  Libraries.scalaMock % Test,
+
 )

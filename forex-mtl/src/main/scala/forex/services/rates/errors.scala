@@ -7,4 +7,6 @@ object errors {
     final case class OneFrameLookupFailed(msg: String) extends Error
   }
 
+  case class RateLookupConnectionException(message: String) extends Exception(message)
+
 }
